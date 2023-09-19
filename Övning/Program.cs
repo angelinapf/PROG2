@@ -22,7 +22,7 @@ while (true)
     string svar = Console.ReadLine();
 
     if (svar == "y" || svar == "Y")
-    {
+    {3
         int grade = generator.Next();
         if (grade > 4)
         {
