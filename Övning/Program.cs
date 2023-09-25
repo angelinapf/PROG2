@@ -1,5 +1,6 @@
 ﻿Player thePlayer = new Player();
-Goomba theGoomba = new Goomba();
+Goomba theGoomba = new Goomba(95, 3, "Goomba");
+
 
 Console.WriteLine($"{thePlayer.name} has {thePlayer.health} healths");
 Console.WriteLine($"{theGoomba.name} has {theGoomba.health} health and {theGoomba.size} size");
@@ -19,9 +20,9 @@ Random generator = new Random();
 while (true)
 {
     Console.WriteLine("Cooking fight!\n Write y to get graded on your food.");
-    string svar = Console.ReadLine();
+    string answer = Console.ReadLine();
 
-    if (svar == "y" || svar == "Y")
+    if (answer == "y" || answer == "Y")
     {3
         int grade = generator.Next();
         if (grade > 4)

@@ -2,7 +2,15 @@ using System;
 
 public class Goomba
 {
-    public int health = 100;
-    public int size = 3;
-    public string name = "Goomba";
+    // Attribute
+    public int health;
+    public int size;
+    public string name;
+
+    // Constructors
+    public Goomba(int health, int size, string name){
+        this.health = health;
+        this.size = size;
+        this.name = name;
+    }
 }
