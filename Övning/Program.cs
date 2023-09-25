@@ -1,8 +1,8 @@
-﻿Player thePlayer = new Player();
+﻿Player thePlayer = new Player(100, 15, "Player");
 Goomba theGoomba = new Goomba(95, 3, "Goomba");
 
 
-Console.WriteLine($"{thePlayer.name} has {thePlayer.health} healths");
+Console.WriteLine($"{thePlayer.getName()} has {thePlayer.health} health");
 Console.WriteLine($"{theGoomba.name} has {theGoomba.health} health and {theGoomba.size} size");
 
 Console.WriteLine("Attack!");
@@ -23,8 +23,8 @@ while (true)
     string answer = Console.ReadLine();
 
     if (answer == "y" || answer == "Y")
-    {3
-        int grade = generator.Next();
+    {
+        int grade = generator.Next(10);
         if (grade > 4)
         {
             theGoomba.health -= 20;
@@ -34,7 +34,7 @@ while (true)
         else if (grade < 4)
         {
             thePlayer.health -= 20;
-            Console.WriteLine($"Your dish was so bad, you fell down a flight of stairs. You now have {thePlayer.health} health");
+            Console.WriteLine($"Your dish was so bad, {thePlayer.getName()} fell down a flight of stairs. You now have {thePlayer.health} health");
             break;
         }
     }
