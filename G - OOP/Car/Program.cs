@@ -17,5 +17,6 @@ class Program
         Console.WriteLine($"The car owner is: {carlos.getOwner()}");
         carlos.setOwner("Felicia");
         Console.WriteLine($"The new car owner is: {carlos.getOwner()}");
+        Console.WriteLine($"The car value is: {carlos.getValue()}");
     }
 }
