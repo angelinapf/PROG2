@@ -19,11 +19,11 @@ public class Tamagochi
     }
 
     // Methods
-    public void Feed(int food)
+    public void Feed()
     {
-        if (this.hunger - food > 0)
+        if (hunger > 0)
         {
-            this.hunger = this.hunger - food;
+            hunger--;
         }
         else
         {
@@ -31,7 +31,8 @@ public class Tamagochi
         }
     }
 
-    public void Hi() {
+    public void Hi()
+    {
         // Get random string from the list words
         int index = generator.Next(words.Count);
         string randomWord = words[index];
@@ -45,7 +46,8 @@ public class Tamagochi
         ReduceBoredom();
     }
 
-    public void Tick() {
+    public void Tick()
+    {
         if (hunger >= 10 || boredom >= 10)
         {
             isAlive = false;
@@ -59,7 +61,9 @@ public class Tamagochi
 
     public void PrintStats()
     {
-        Console.WriteLine($"{name} stats\nHunger: {hunger}\nBoredom: {boredom}\nTamagochi is alive?: {isAlive}");
+        Console.WriteLine(
+            $"{name} stats\nHunger: {hunger}\nBoredom: {boredom}\nTamagochi is alive?: {isAlive}"
+        );
     }
 
     public bool GetAlive()
@@ -67,11 +71,18 @@ public class Tamagochi
         return isAlive;
     }
 
-    private void ReduceBoredom() {
+    private void ReduceBoredom()
+    {
         boredom--;
     }
 
-    public void SetName(string name){
-        this.name=name;
+    public void SetName(string name)
+    {
+        this.name = name;
+    }
+
+    public void GetName()
+    {
+        return name;
     }
 }
