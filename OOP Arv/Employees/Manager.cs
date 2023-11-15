@@ -32,11 +32,11 @@ public class Manager : Employee
         {
             Console.WriteLine($"{name} got a bonus for working more than 40 hours!");
             salary = bonus + salary;
-            Console.WriteLine($"Your salary is {salary}.");
+            Console.WriteLine($"{name}'s salary is {salary}.");
         }
         else
         {
-            Console.WriteLine($"Your salary is {salary}.");
+            Console.WriteLine($"{name}'s salary is {salary}.");
         }
     }
 }

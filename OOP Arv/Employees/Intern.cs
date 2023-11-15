@@ -13,14 +13,20 @@ public class Intern : Employee
     // Methods
     public override void Work(int hours)
     {
+        workedHours = hours + workedHours;
         if (workedHours < 10)
         {
-            workedHours = hours + workedHours;
             Console.WriteLine($"{name} have worked {workedHours} hours in total.");
         }
         else
         {
             Console.WriteLine($"{name} has exceeded their 10 hours, and can't work anymore.");
         }
+    }
+
+    public override void calcSalary()
+    {
+        double salary = workedHours * hourlyWage;
+        Console.WriteLine($"{name}'s salary is {salary}.");
     }
 }

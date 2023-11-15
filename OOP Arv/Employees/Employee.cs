@@ -17,11 +17,12 @@ public class Employee
     public virtual void Work(int hours)
     {
         workedHours = hours + workedHours;
-        Console.WriteLine($"{name} have worked {workedHours} hours.");
+        Console.WriteLine($"{name} has worked {workedHours} hours.");
     }
 
     public virtual void calcSalary()
     {
         double salary = workedHours * hourlyWage;
+        Console.WriteLine($"{name}'s salary is {salary}.");
     }
 }
