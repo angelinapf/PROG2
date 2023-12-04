@@ -39,4 +39,9 @@ public class Manager : Employee
             Console.WriteLine($"{name}'s salary is {salary}.");
         }
     }
+
+    public void bonusCalc(){
+        Console.WriteLine("How many bonuses do you think you have gotten this month?: ");
+        double calculatedBonus = bonus + salary;
+    }
 }

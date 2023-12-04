@@ -8,6 +8,7 @@ class Program
         Employee myEmployee = new Employee("Nazanin", 120, 26);
         Intern myIntern = new Intern("Felicia", 94, 1);
         Manager myManager = new Manager("Alina", 196, 20);
+        Employee employeeOne = new Employee("Edyta", 110, 32);
 
         myEmployee.Work(10);
         myIntern.Work(11);
@@ -16,5 +17,7 @@ class Program
         myEmployee.calcSalary();
         myIntern.calcSalary();
         myManager.calcSalary();
+
+
     }
 }
