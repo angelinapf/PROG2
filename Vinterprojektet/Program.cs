@@ -1,7 +1,8 @@
 ﻿/* Idéer:
 tamagochi
 film digital library
-music player
+library management system
+hotel booking system
 note taking application */
 
 namespace Vinterprojektet;
