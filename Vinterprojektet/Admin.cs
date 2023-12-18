@@ -1,4 +1,7 @@
 public class Admin : Person{
     // Attributes
-    bool AdminAccess = true; // Staff access to admin control etc.
+    bool adminAccess = true; // Staff access to admin control etc.
+    private string username = "";
+    private string password = "";
+    private string fullName = "";
 }
