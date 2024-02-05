@@ -1,10 +1,4 @@
-public class Student : Borrower{
-    // Attributes
-    bool ArchiveAccess = true;
-
-    // Constructor
-
-    // Methods
+//public class Student : Borrower{
 
     
-}
+//}
