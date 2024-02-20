@@ -1,12 +1,15 @@
 public class Admin
 {
+    //Attributes
     private Library library;
 
+    //Constructor
     public Admin(Library library)
     {
         this.library = library;
     }
 
+    // Methods
     public void AdminMenu()
     {
         while (true)

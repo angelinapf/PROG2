@@ -4,10 +4,12 @@ class Program
     static void Main(string[] args)
     {
 
+        // Create the
         Library library = new Library();
         Admin admin = new Admin(library);
         Borrower borrower = new Borrower(library);
 
+        // Loop the Login 'menu'
         while (true)
         {
             Console.WriteLine("Login\n");

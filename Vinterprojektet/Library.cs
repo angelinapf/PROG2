@@ -1,20 +1,23 @@
 public class Library
 {
-    private List<Book> books;
+    // Attributes
+    private List<Book> books; // make a list for books
 
+    // Constructor
     public Library()
     {
         books = new List<Book>();
     }
 
-    public void AddBook(string title, string author)
+    // Methods
+    public void AddBook(string title, string author) // Add books
     {
         Book newBook = new Book(title, author);
         books.Add(newBook);
         Console.WriteLine("Book added successfully!");
     }
 
-    public void DisplayBooks()
+    public void DisplayBooks() // Show the books (if available)
     {
         if (books.Count == 0)
         {
@@ -29,9 +32,9 @@ public class Library
         }
     }
 
-    public bool LoanBook(string title)
+    public bool LoanBook(string title) // Loan books
     {
-        Book book = books.Find(b => b.Title == title && b.IsAvailable);
+        Book book = books.Find(b => b.Title == title && b.IsAvailable); // check if
         if (book != null)
         {
             book.IsAvailable = false;

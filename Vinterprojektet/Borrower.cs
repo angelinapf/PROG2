@@ -1,13 +1,16 @@
 public class Borrower
 {
+    //Attributes
     private Library library;
     public int amountBooks;
 
+    //Constructor
     public Borrower(Library library)
     {
         this.library = library;
     }
 
+    //Methods
     public void BorrowerMenu()
     {
         while (true)
