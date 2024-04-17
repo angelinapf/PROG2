@@ -1,7 +1,11 @@
-public class Customer{
+public class Customer : Person{
     // Attributes
-    public string name;
-    private List<Drink> drinks; //list of drinks
+    private List<Order> orders; // a list of orders 
+
+    // Constructor
+    public Customer(){
+        orders = new List<Order>();
+    }
 
     // Methods
     public void Order(){
