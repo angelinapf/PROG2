@@ -1,12 +1,23 @@
+using System.IO;
+
 public class Order{
     // Attributes
     public int OrderNumber; // the number for the order, so the system can organize different orders
-    public Customer Customer;
-    public List<MenuItem> items; // a list of items that are eventually gonna be ordered and implemented into the order
+    // public Customer Customer;
+    public List<Menu> items; // a list of items that are eventually gonna be ordered and implemented into the order
 
-    public Order(int orderNumber, Customer customer, List<MenuItem> items){
+    
+    public Order(int orderNumber){
         OrderNumber = orderNumber; 
-        Customer = customer;
+
+        string[] orderContent = {"", "", ""};
+
+        File.WriteAllLines(@"receipt.txt", orderContent);
+    }
+
+    // Methods
+    public void listOrders(){
+
     }
 
 

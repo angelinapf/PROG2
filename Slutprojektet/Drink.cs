@@ -1,8 +1,9 @@
+using System.IO;
+
 public class Drinks : Menu{
     // Attributes
-    public string name;
-    protected string color;
-    protected double volume;
+    protected string color = ""; // Color of the drink
+    protected double volume; // volume of the drink
 
     // Methods
     public void Drink(double amount){ // Method for drinking the drink
