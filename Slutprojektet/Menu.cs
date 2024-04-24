@@ -1,7 +1,9 @@
+#nullable disable
+
 public class Menu{
     // Attributes
     public int itemID; // ID for each menu item, ex. ID 1 = Tea etc etc
-    public string name; // name for each menu item
+    public string itemName = ""; // name for each menu item
 
     // Constructor
 

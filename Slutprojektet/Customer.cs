@@ -1,19 +1,21 @@
+#nullable disable
+
 using System.IO;
 
 public class Customer : Person{
     // Attributes
-    private List<Order> orders; // a list of orders 
+
 
     // Constructor
-    public Customer(){
-        orders = new List<Order>();
+    public Customer(string name, int age) : base(name, age){
     }
 
     // Methods
     public override void personMenu(){
         while (true)
         {
-            Console.WriteLine("Customer: Welcome!\n");
+            DisplayInfo();
+            Console.WriteLine("CUSTOMER Menu:\n");
             Console.WriteLine("1: View Menu");
             Console.WriteLine("2: Order");
 
@@ -33,5 +35,12 @@ public class Customer : Person{
             }
         }
     }
+
+    public override void DisplayInfo()
+    {
+        Console.WriteLine($"Hello Customer {Name}, Age: {Age}!");
+    }
     
 }
+
+#nullable enable

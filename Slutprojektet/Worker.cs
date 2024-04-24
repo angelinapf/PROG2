@@ -1,13 +1,17 @@
-using System.IO;
+#nullable disable
 
 public class Worker : Person{
     // Attributes
     
     // Constructor
+    public Worker(string name, int age) : base(name, age){
+    }
 
     // Methods
     public override void personMenu(){
-        Console.WriteLine("Worker: Welcome!\n");
+
+        DisplayInfo();
+        Console.WriteLine("WORKER Menu:\n");
         Console.WriteLine("1: Look through Orders");
         Console.WriteLine("2: Print Receipt");
         Console.WriteLine("3: Add items to menu");
@@ -25,7 +29,7 @@ public class Worker : Person{
 
             case "2": // if the user enters choice number 2 (i.e. input is 2), this choice will run
                 Console.Clear();
-                
+
                 Console.WriteLine("This is the receipt: \n");
 
                 // Printing receipt from the order
@@ -47,4 +51,10 @@ public class Worker : Person{
             break;
         }
     }
+
+    public override void DisplayInfo(){
+        Console.WriteLine($"Hello Worker {Name}, Age: {Age}!");
+    }
 }
+
+#nullable enable

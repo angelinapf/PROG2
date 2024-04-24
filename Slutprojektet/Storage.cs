@@ -3,7 +3,7 @@ using System.IO;
 public class Storage{
     // Attributes
 
-    string[] storage;
+    //string[] storage;
 
     // Constructor
 

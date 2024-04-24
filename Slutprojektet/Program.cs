@@ -1,19 +1,35 @@
-﻿// Restaurang? Café
+﻿#nullable disable
+// Restaurang? Café
 // 
 using System.IO;
-
 namespace Slutprojektet;
 class Program
 {
     static void Main(string[] args)
     {
-        // Create the o
+        string nameInput = "";
+        int ageInput = 0;
 
-        Person person = new Person();
-        Worker worker = new Worker();
-        Customer customer = new Customer();
+        while (true)
+        {
+            Console.Write("What is your name?: ");
+            nameInput = Console.ReadLine();
 
-        
+            Console.Write("How old are you?: ");
+            if (int.TryParse(Console.ReadLine(), out ageInput))
+            {
+                // Age input is valid, break out of the loop
+                break;
+            }
+            else
+            {
+                Console.WriteLine("Invalid age. Please enter a valid number.");
+            }
+        }
+
+        Worker worker = new Worker(nameInput, ageInput);
+        Customer customer = new Customer(nameInput, ageInput);
+
         // The "login" (the user decides whether they are a worker or a customer)
         while (true) // while loop for the
         {
@@ -37,6 +53,12 @@ class Program
                 break;
                 case "3":
                     Console.Clear();
+                    Environment.Exit(0);
+
+                break;
+
+                default:
+                    Console.WriteLine("Invalid choice. Please try again.");
 
                 break;
             }
@@ -46,3 +68,5 @@ class Program
         
     }
 }
+
+#nullable enable 
