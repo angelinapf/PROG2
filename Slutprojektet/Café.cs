@@ -1,6 +1,7 @@
 using System.IO;
 
-public class Café{
+public class Café
+{
     // Attributes
 
     // Constructor

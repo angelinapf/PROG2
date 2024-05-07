@@ -1,25 +1,54 @@
 #nullable disable
 
+using System.Dynamic;
 using System.IO;
 
-public class Order{
+public class Order
+{
     // Attributes
-    public int OrderNumber; // the number for the order, so the system can organize different orders
-    // public Customer Customer;
-    public List<Menu> items; // a list of items that are eventually gonna be ordered and implemented into the order
+    public List<Menu> items { get; private set; } // a list of items that are eventually gonna be ordered and implemented into the order
 
-    
-    public Order(int orderNumber){
-        OrderNumber = orderNumber; 
-
-        string[] orderContent = {"", "", ""};
-
-        File.WriteAllLines(@"receipt.txt", orderContent);
+    // Constructor
+    public Order()
+    {
+        items = new List<Menu>();
     }
 
-    // Methods
-    public void listOrders(){
+    public void AddItem(Menu item) // method to add an item to the order
+    {
+        items.Add(item);
+    }
 
+    public void SaveOrder()
+    {
+        using (StreamWriter writer = File.AppendText("receipt.txt"))
+        {
+            writer.WriteLine($"Order Number: {GenerateOrderNumber()}");
+            writer.WriteLine("Items:");
+
+            foreach (Menu item in items)
+            {
+                writer.WriteLine(item.itemName);
+            }
+
+            writer.WriteLine();
+        }
+
+    }
+
+    private int GenerateOrderNumber()
+    {
+        return DateTime.Now.GetHashCode(); // generate a unique order number based on the current time
+    }
+
+    // Method
+    public void ListOrders()
+    {
+        string[] orders = File.ReadAllLines("receipt.txt");
+        foreach (string order in orders)
+        {
+            Console.WriteLine(order);
+        }
     }
 
 

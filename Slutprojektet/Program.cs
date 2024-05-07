@@ -27,7 +27,10 @@ class Program
             }
         }
 
-        Worker worker = new Worker(nameInput, ageInput);
+        Storage storage = new Storage();
+        Menu menu = new Menu();
+        Order order = new Order();
+        Worker worker = new Worker(nameInput, ageInput, storage);
         Customer customer = new Customer(nameInput, ageInput);
 
         // The "login" (the user decides whether they are a worker or a customer)
@@ -40,32 +43,33 @@ class Program
             Console.Write("\nEnter your choice:");
             string choice = Console.ReadLine();
 
-            switch (choice){
+            switch (choice)
+            {
                 case "1":
                     Console.Clear();
                     worker.personMenu();
 
-                break;
+                    break;
                 case "2":
                     Console.Clear();
                     customer.personMenu();
 
-                break;
+                    break;
                 case "3":
                     Console.Clear();
                     Environment.Exit(0);
 
-                break;
+                    break;
 
                 default:
                     Console.WriteLine("Invalid choice. Please try again.");
 
-                break;
+                    break;
             }
         }
-        
 
-        
+
+
     }
 }
 
