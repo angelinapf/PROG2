@@ -6,6 +6,7 @@ public class Worker : Person
     private Storage storage; // instance of storage
     private Menu menu; // instance of menu
     private Order order; // instance of order
+    private Person person;
 
     // Constructor
     public Worker(string name, int age, Storage storage) : base(name, age)
@@ -23,6 +24,7 @@ public class Worker : Person
         Console.WriteLine("2: Print Receipt");
         Console.WriteLine("3: Add items to menu");
         Console.WriteLine("4: Remove items from menu");
+        Console.WriteLine("5: Go back to the start menu");
 
         Console.Write("\nEnter your choice:");
         string choice = Console.ReadLine();
@@ -30,17 +32,22 @@ public class Worker : Person
         switch (choice)
         {
             case "1": // if the user enters choice number 1 (i.e. input is 1), this choice will run
+            try{
                 Console.Clear();
                 order.ListOrders();
 
-                break;
+                
+            }catch(Exception e){
+                Console.WriteLine("No orders");
+            }
+            break;
 
             case "2": // if the user enters choice number 2 (i.e. input is 2), this choice will run
                 Console.Clear();
 
                 Console.WriteLine("This is the receipt: \n");
 
-                // Printing receipt from the order
+                // printing receipt from the order (reading the receipt file)
                 string receipt = File.ReadAllText(@"receipt.txt");
                 Console.WriteLine(receipt);
 
@@ -58,10 +65,20 @@ public class Worker : Person
                 RemoveItemsFromStorage();
                 
                 break;
+            case "5":
+                Console.Clear();
+                person.personMenu();
+
+                break;
+
+            default:
+                Console.WriteLine("Invalid choice. Please try again.");
+
+                break;
         }
     }
 
-     private void AddItemsToStorage()
+     private void AddItemsToStorage() //method to add items to the storage
     {
         Console.Write("Enter the name of the item to add to storage: ");
         string itemName = Console.ReadLine();
@@ -77,7 +94,7 @@ public class Worker : Person
         Console.WriteLine($"Removed {itemName} from storage.");
     }
 
-    public override void DisplayInfo()
+    public override void DisplayInfo() // overriden displayinfo method
     {
         Console.WriteLine($"Hello Worker {Name}, Age: {Age}!");
     }

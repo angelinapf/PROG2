@@ -20,7 +20,7 @@ public class Person
     }
 
     // Methods
-    public virtual void personMenu() { }
+    public virtual void personMenu() { } // virtual method 
 
     public virtual void DisplayInfo()
     {

@@ -1,6 +1,6 @@
 using System.IO;
 
-/* public class Drink : Menu
+public class Drink : Menu
 {
     // Attributes
     protected string color = ""; // Color of the drink
@@ -16,4 +16,3 @@ using System.IO;
 
     }
 }
-*/

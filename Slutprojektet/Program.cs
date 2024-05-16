@@ -26,7 +26,7 @@ class Program
                 Console.WriteLine("Invalid age. Please enter a valid number.");
             }
         }
-
+        // 
         Storage storage = new Storage();
         Menu menu = new Menu();
         Order order = new Order();
@@ -34,7 +34,7 @@ class Program
         Customer customer = new Customer(nameInput, ageInput);
 
         // The "login" (the user decides whether they are a worker or a customer)
-        while (true) // while loop for the
+        while (true) // while loop for the user input, the main café menu
         {
             Console.WriteLine("Café\n");
             Console.WriteLine("1. Worker");
@@ -43,21 +43,21 @@ class Program
             Console.Write("\nEnter your choice:");
             string choice = Console.ReadLine();
 
-            switch (choice)
+            switch (choice) // depending on the users choice, switch between cases
             {
-                case "1":
-                    Console.Clear();
+                case "1": // if user types in 1, Worker Menu shows
+                    Console.Clear(); // clear the terminal
                     worker.personMenu();
 
                     break;
-                case "2":
-                    Console.Clear();
+                case "2": // if user types in 2, Customer Menu shows
+                    Console.Clear(); // clear the terminal
                     customer.personMenu();
 
                     break;
                 case "3":
-                    Console.Clear();
-                    Environment.Exit(0);
+                    Console.Clear(); // clear the terminal
+                    Environment.Exit(0); // exit
 
                     break;
 

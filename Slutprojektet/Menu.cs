@@ -7,11 +7,9 @@ public class Menu : Storage
     public string itemName = ""; // name for each menu item
 
     // Constructor
-    /* public Menu(int itemID, string itemName)
-    {
-        this.itemID = itemID;
-        this.itemName = itemName;
-    } */
+    public Menu(){
+
+    }
 
     // Methods
     public void ShowMenu()

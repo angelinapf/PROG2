@@ -19,19 +19,19 @@ public class Order
         items.Add(item);
     }
 
-    public void SaveOrder()
+    public void SaveOrder() // method to save the order to the receipt.txt file
     {
-        using (StreamWriter writer = File.AppendText("receipt.txt"))
+        using (StreamWriter writer = File.AppendText("receipt.txt")) // open a stream to add to the receipt.txt file
         {
-            writer.WriteLine($"Order Number: {GenerateOrderNumber()}");
-            writer.WriteLine("Items:");
+            writer.WriteLine($"Order Number: {GenerateOrderNumber()}"); // write the order number
+            writer.WriteLine("Items:"); // write the items
 
             foreach (Menu item in items)
             {
                 writer.WriteLine(item.itemName);
             }
 
-            writer.WriteLine();
+            writer.WriteLine(); // adds an empty line so its easier to read
         }
 
     }
@@ -41,8 +41,8 @@ public class Order
         return DateTime.Now.GetHashCode(); // generate a unique order number based on the current time
     }
 
-    // Method
-    public void ListOrders()
+    
+    public void ListOrders() // method to list all orders from the receipt.txt file
     {
         string[] orders = File.ReadAllLines("receipt.txt");
         foreach (string order in orders)

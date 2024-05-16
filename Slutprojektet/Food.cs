@@ -1,4 +1,4 @@
-/*public class Food : Menu
+public class Food : Menu
 {
     // Attributes
 
@@ -6,4 +6,3 @@
 
     // Methods
 }
-*/
